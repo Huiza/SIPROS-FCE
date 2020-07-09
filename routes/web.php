@@ -14,19 +14,42 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/mi_primer_ruta',function(){
-	return 'Hola mundo';
+
+//Rutas de los expedientes
+Route::get('/expedientes_listado', function () {
+    return view('Expedientes/expedientes_listado');
 });
-//Rutas con parametros
-Route::get('/name/{name}/lastname/{lastname?}',function($name,$lastname=null){
-	return 'Hola soy'.$name .$lastname;
+
+Route::get('/expediente_nuevo', function () {
+    return view('Expedientes/expediente_nuevo');
 });
-//Route::get('habitacion/{param}','OtroController@prueba');forma manual controller
 
 
-Route::post('instituciones/{institucion}/proyectos','ProyectoController@store');
-Route::resource('habitacion','HabitacionController');//forma resorce
-Route::resource('kardex','kardexController');
-Route::resource('instituciones','InstitucionController');
-Route::resource('proyectos','ProyectoController');
+//Rutas de las instituciones
+Route::get('/instituciones_listado', function () {
+    return view('Instituciones/instituciones_listado');
+});
 
+Route::get('/institucion_nueva', function () {
+    return view('Instituciones/institucion_nueva');
+});
+
+
+//Rutas de los proyectos
+Route::get('/proyectos_listado', function () {
+    return view('Proyectos/proyectos_listado');
+});
+
+Route::get('/proyecto_nuevo', function () {
+    return view('Proyectos/proyecto_nuevo');
+});
+
+
+//Rutas para los usuarios
+Route::get('/usuarios_listado', function () {
+    return view('Usuarios/usuarios_listado');
+});
+
+Route::get('/usuario_nuevo', function () {
+    return view('Usuarios/usuario_nuevo');
+});
